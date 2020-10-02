@@ -18,7 +18,7 @@ def generateDataset(pageName):
 
 
 def filterResults(names):
-    outputFile = open("results.txt", 'w')
+    outputFile = open("results.txt", 'a')
     for name in names:
         response = query(name, container='dict')
         if not response['heading']:
