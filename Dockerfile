@@ -27,7 +27,8 @@ RUN $APT_INSTALL software-properties-common
 RUN $PIP_INSTALL \
   setuptools \
   jupyter \
-  wikipedia
+  wikipedia \
+  duckduckpy
 
 # Copy project files
 RUN mkdir namegen
