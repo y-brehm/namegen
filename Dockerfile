@@ -17,11 +17,7 @@ RUN $APT_INSTALL \
     libssl-dev \
     curl \
     unzip \
-    unrar \
-    vim
-
-# Python
-RUN $APT_INSTALL software-properties-common
+    unrar 
 
 # pip dependencies
 RUN $PIP_INSTALL \
@@ -34,4 +30,3 @@ RUN $PIP_INSTALL \
 RUN mkdir namegen
 WORKDIR /namegen/
 
-EXPOSE 6006

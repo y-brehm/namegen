@@ -19,7 +19,7 @@ def generateDataset(pageName):
 
 
 def filterResults(names):
-    outputFile = open("results.txt", 'a')
+    outputFile = open("../results.txt", 'a')
     for name in names:
         response = query(name, container='dict')
         time.sleep(0.2)
@@ -30,7 +30,7 @@ def filterResults(names):
 def trainOnDataset():
     os.chdir("char-rnn-tensorflow")
     if not os.path.isfile(os.path.join("save", "config.pkl")):
-        os.system(f"python3 train.py --seq_length={minNameLength} --batch_size=128")
+        os.system(f"python3 train.py --seq_length={minNameLength} --num_epochs=3 --batch_size=128")
 
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
