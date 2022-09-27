@@ -10,13 +10,14 @@ from duckduckpy import query
 maxNameLength = 10
 minNameLength = 3
 
+
 def generate_dataset(page_name):
     names = wikipedia.page(page_name).links
     dataset_file = open("char-rnn-tensorflow/dataset/input.txt", "w")
     dataset_file.truncate(0)
     for name in names:
         if maxNameLength >= len(name) > minNameLength:
-           dataset_file.write(f"{name}\n")
+            dataset_file.write(f"{name}\n")
     dataset_file.close()
 
 
@@ -42,7 +43,7 @@ def write_results(names):
         output_file.write(f"{name}\n")
 
 
-def main(page_name, apply_filter:bool):
+def main(page_name, apply_filter: bool):
     if page_name is not None:
         generate_dataset(page_name)
     train_on_dataset()
